@@ -1,0 +1,6 @@
+# Ignore input JSON file
+input.json
+
+# Ignore other temporary files
+*.log
+*.tmp
