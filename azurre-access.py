@@ -78,15 +78,15 @@ def add_group_to_enterprise_app(app_object_id, group_object_id, role_definition_
             return
 
         # Assign the role to the group within the enterprise application
-        # url = f"https://graph.microsoft.com/v1.0/servicePrincipals/{app_object_id}/appRoleAssignments"
-        # role_assignment_params = {
-        #     "principalId": group_object_id,
-        #     "appRoleId": role_definition_id,
-        #     "resourceId": app_object_id  # Service principal ID
-        # }
-        # response = requests.post(url, headers=headers, json=role_assignment_params)
-        # response.raise_for_status()
-        # print(f"Role assigned successfully to group in enterprise app: {response.json()['id']}")
+        url = f"https://graph.microsoft.com/v1.0/servicePrincipals/{app_object_id}/appRoleAssignments"
+        role_assignment_params = {
+            "principalId": group_object_id,
+            "appRoleId": role_definition_id,
+            "resourceId": app_object_id  # Service principal ID
+        }
+        response = requests.post(url, headers=headers, json=role_assignment_params)
+        response.raise_for_status()
+        print(f"Role assigned successfully to group in enterprise app: {response.json()['id']}")
     except Exception as e:
         print(f"Failed to assign role to group in enterprise app: {e}")
 
