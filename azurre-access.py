@@ -7,7 +7,6 @@ from azure.identity import DefaultAzureCredential
 
 # Set up Azure credentials
 credential = DefaultAzureCredential()
-tenant_id = "42f7676c-f455-423c-82f6-dc2d99791af7"
 token = credential.get_token("https://graph.microsoft.com/.default").token
 
 # Define headers for Microsoft Graph API requests
