@@ -46,6 +46,11 @@ Run the following command to install required Python libraries:
 pip install requests azure-identity
 ```
 
+### Login to Azure
+Login via `az login --tenant <tenant-id>`.
+The logged in token will be used via script to run the API calls.
+
+
 ### Run the Script
 Use the following command to execute the script:
 
