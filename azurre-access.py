@@ -3,6 +3,7 @@ import requests
 import jwt
 import argparse
 import json
+import urllib.parse
 from azure.identity import DefaultAzureCredential
 
 # Set up Azure credentials
@@ -20,7 +21,9 @@ def fetch_group_object_id(group_name):
     """
     Fetch the object ID of a group by its display name.
     """
-    url = f"https://graph.microsoft.com/v1.0/groups?$filter=displayName eq '{group_name}'"
+    # URL-encode the group name
+    encoded_group_name = urllib.parse.quote(group_name)
+    url = f"https://graph.microsoft.com/v1.0/groups?$filter=displayName eq '{encoded_group_name}'"
     response = requests.get(url, headers=headers)
     response.raise_for_status()
     groups = response.json().get("value", [])
