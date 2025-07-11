@@ -81,3 +81,23 @@ The script provides detailed output for each operation, including:
 ## Notes
 - Ensure the JSON file is correctly formatted and contains valid data.
 - The script handles multiple roles in a single execution and logs errors for individual roles without stopping the entire process.
+
+## Owner Management
+
+### List Owners
+```
+python azurre-access.py list-owners --app-name "App Name"
+python azurre-access.py list-owners --app-id <client-id>
+```
+
+### Add Owners
+```
+python azurre-access.py add-owners --user-email user1@example.com --user-email user2@example.com --app-name "App Name"
+python azurre-access.py add-owners --user-email user1@example.com --user-email user2@example.com --app-id <client-id>
+```
+
+### Remove Owners
+```
+python azurre-access.py remove-owners --user-email user1@example.com --user-email user2@example.com --app-name "App Name"
+python azurre-access.py remove-owners --user-email user1@example.com --user-email user2@example.com --app-id <client-id>
+```
